@@ -1,0 +1,8 @@
+version = "1.0.0";
+description = "My first app";
+
+schema FirstApp {
+
+    string<12> data;
+
+};

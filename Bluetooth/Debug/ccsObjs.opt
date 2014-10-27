@@ -1,0 +1,1 @@
+"./Em/FirstApp.obj" "./Em/FirstApp-STUBS.obj" "./Hal/Hal.obj" "./emmoco/FirstApp.obj" "./emmoco/FirstApp-TODO.obj" "./FirstApp-Prog.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 

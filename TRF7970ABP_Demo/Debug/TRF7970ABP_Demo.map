@@ -1,0 +1,791 @@
+******************************************************************************
+                  MSP430 Linker PC v4.2.1                      
+******************************************************************************
+>> Linked Wed Apr 02 23:30:12 2014
+
+OUTPUT FILE NAME:   <TRF7970ABP_Demo.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0000d0b8
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SFR                   00000000   00000010  00000000  00000010  RWIX
+  PERIPHERALS_8BIT      00000010   000000f0  00000000  000000f0  RWIX
+  PERIPHERALS_16BIT     00000100   00000100  00000000  00000100  RWIX
+  RAM                   00000200   00000200  000001fd  00000003  RWIX
+  INFOD                 00001000   00000040  00000000  00000040  RWIX
+  INFOC                 00001040   00000040  00000000  00000040  RWIX
+  INFOB                 00001080   00000040  00000000  00000040  RWIX
+  INFOA                 000010c0   00000040  00000000  00000040  RWIX
+  FLASH                 0000c000   00003fe0  000015e0  00002a00  RWIX
+  INT00                 0000ffe0   00000002  00000000  00000002  RWIX
+  INT01                 0000ffe2   00000002  00000000  00000002  RWIX
+  INT02                 0000ffe4   00000002  00000002  00000000  RWIX
+  INT03                 0000ffe6   00000002  00000002  00000000  RWIX
+  INT04                 0000ffe8   00000002  00000000  00000002  RWIX
+  INT05                 0000ffea   00000002  00000002  00000000  RWIX
+  INT06                 0000ffec   00000002  00000002  00000000  RWIX
+  INT07                 0000ffee   00000002  00000002  00000000  RWIX
+  INT08                 0000fff0   00000002  00000002  00000000  RWIX
+  INT09                 0000fff2   00000002  00000002  00000000  RWIX
+  INT10                 0000fff4   00000002  00000002  00000000  RWIX
+  INT11                 0000fff6   00000002  00000002  00000000  RWIX
+  INT12                 0000fff8   00000002  00000002  00000000  RWIX
+  INT13                 0000fffa   00000002  00000002  00000000  RWIX
+  INT14                 0000fffc   00000002  00000002  00000000  RWIX
+  RESET                 0000fffe   00000002  00000002  00000000  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.pinit     0    0000c000    00000000     UNINITIALIZED
+
+.bss       0    00000200    000000d1     UNINITIALIZED
+                  00000200    000000ae     main.obj (.bss)
+                  000002ae    00000011     iso14443a.obj (.bss)
+                  000002bf    00000001     spi.obj (.bss)
+                  000002c0    00000004     rts430.lib : _lock.obj (.bss)
+                  000002c4    00000004                : boot.obj (.bss)
+                  000002c8    00000003     iso15693.obj (.bss)
+                  000002cb    00000001     --HOLE--
+                  000002cc    00000003     trf7970.obj (.bss)
+                  000002cf    00000002     uart.obj (.bss)
+
+.data      0    00000200    00000000     UNINITIALIZED
+
+.stack     0    000002d4    0000012c     UNINITIALIZED
+                  000002d4    00000002     rts430.lib : boot.obj (.stack)
+                  000002d6    0000012a     --HOLE--
+
+.text      0    0000c000    000012d0     
+                  0000c000    000004a0     iso15693.obj (.text:Iso15693Anticollision)
+                  0000c4a0    0000022c     trf7970.obj (.text:Trf7970ISR)
+                  0000c6cc    0000014e     trf7970.obj (.text:Trf7970WriteIsoControl)
+                  0000c81a    000000c2     rts430.lib : fs_mpy.obj (.text)
+                  0000c8dc    00000086     spi.obj (.text:SpiReadSingle)
+                  0000c962    00000084     iso15693.obj (.text:Find_Tag)
+                  0000c9e6    00000082     iso15693.obj (.text:TRF7970A_Init)
+                  0000ca68    0000007c     spi.obj (.text:SpiReadCont)
+                  0000cae4    00000078     trf7970BoosterPack.obj (.text:McuOscSel)
+                  0000cb5c    00000072     spi.obj (.text:SpiWriteSingle)
+                  0000cbce    00000068     trf7970.obj (.text:Trf7970PortB)
+                  0000cc36    0000005e     spi.obj (.text:SpiWriteCont)
+                  0000cc94    0000005c     rts430.lib : lsr32.obj (.text:l_lsr_const)
+                  0000ccf0    00000054     trf7970BoosterPack.obj (.text:McuDelayMillisecond)
+                  0000cd44    00000048     spi.obj (.text:SpiRawWrite)
+                  0000cd8c    00000048     rts430.lib : autoinit.obj (.text:_auto_init)
+                  0000cdd4    00000046                : fs_tou.obj (.text)
+                  0000ce1a    00000046     trf7970BoosterPack.obj (.text:timerHandler)
+                  0000ce60    00000042     uart.obj (.text:UartPutByte)
+                  0000cea2    00000040     spi.obj (.text:SpiDirectCommand)
+                  0000cee2    0000003e     rts430.lib : lsl32.obj (.text:l_lsl_const)
+                  0000cf20    00000032     iso15693.obj (.text:Iso15693FindTag)
+                  0000cf52    00000032     spi.obj (.text:SpiUsciSet)
+                  0000cf84    00000032     rts430.lib : fs_ultof.obj (.text)
+                  0000cfb6    00000030     trf7970.obj (.text:Trf7970InitialSettings)
+                  0000cfe6    0000002e     uart.obj (.text:UartSetup)
+                  0000d014    0000002c     rts430.lib : asr16.obj (.text)
+                  0000d040    0000002c                : lsl16.obj (.text)
+                  0000d06c    00000026     trf7970.obj (.text:Trf7970DisableSlotCounter)
+                  0000d092    00000026     uart.obj (.text:UartNibble2Ascii)
+                  0000d0b8    00000026     rts430.lib : boot.obj (.text:_c_int00_noexit)
+                  0000d0de    00000024     trf7970.obj (.text:Trf7970TurnRfOff)
+                  0000d102    00000022     spi.obj (.text:SpiSetup)
+                  0000d124    00000020     trf7970.obj (.text:Trf7970ReadIrqStatus)
+                  0000d144    0000001e     uart.obj (.text:UartSendCString)
+                  0000d162    0000001a     trf7970.obj (.text:Trf7970ResetIrqStatus)
+                  0000d17c    00000018     trf7970.obj (.text:Trf7970TurnRfOn)
+                  0000d194    00000014     trf7970.obj (.text:Trf7970ReadCont)
+                  0000d1a8    00000014     trf7970.obj (.text:Trf7970WriteCont)
+                  0000d1bc    00000014     trf7970.obj (.text:Trf7970WriteSingle)
+                  0000d1d0    00000014     uart.obj (.text:UartPutChar)
+                  0000d1e4    00000012     trf7970.obj (.text:Trf7970RawWrite)
+                  0000d1f6    00000012     trf7970.obj (.text:Trf7970ReadSingle)
+                  0000d208    00000012     uart.obj (.text:UartPutCrlf)
+                  0000d21a    00000012     rts430.lib : memcpy.obj (.text:memcpy)
+                  0000d22c    00000010     trf7970.obj (.text:Trf7970Reset)
+                  0000d23c    00000010     trf7970.obj (.text:Trf7970RunDecoders)
+                  0000d24c    00000010     trf7970.obj (.text:Trf7970StopDecoders)
+                  0000d25c    00000010     trf7970.obj (.text:Trf7970TransmitNextSlot)
+                  0000d26c    00000010     rts430.lib : epilog.obj (.text)
+                  0000d27c    0000000e     trf7970BoosterPack.obj (.text:McuCounterSet)
+                  0000d28a    0000000e     trf7970.obj (.text:Trf7970DirectCommand)
+                  0000d298    0000000a     iso15693.obj (.text:Port_1)
+                  0000d2a2    0000000a     main.obj (.text:main)
+                  0000d2ac    00000008     iso15693.obj (.text:watchdog_timer)
+                  0000d2b4    00000006     trf7970.obj (.text:Trf7970CommunicationSetup)
+                  0000d2ba    00000006     trf7970.obj (.text:Trf7970ReConfig)
+                  0000d2c0    00000006     rts430.lib : isr_trap.obj (.text:__TI_ISR_TRAP)
+                  0000d2c6    00000004                : pre_init.obj (.text:_system_pre_init)
+                  0000d2ca    00000004                : exit.obj (.text:abort)
+                  0000d2ce    00000002                : _lock.obj (.text:_nop)
+
+.const     0    0000d2d0    0000029c     
+                  0000d2d0    00000262     iso15693.obj (.const:.string)
+                  0000d532    0000002e     iso14443a.obj (.const:.string)
+                  0000d560    0000000c     iso14443b.obj (.const:.string)
+
+.cinit     0    0000d56c    00000074     
+                  0000d56c    0000003c     main.obj (.cinit)
+                  0000d5a8    00000011     iso15693.obj (.cinit)
+                  0000d5b9    00000001     --HOLE-- [fill = 0]
+                  0000d5ba    0000000b     iso14443a.obj (.cinit)
+                  0000d5c5    00000001     --HOLE-- [fill = 0]
+                  0000d5c6    0000000b     uart.obj (.cinit)
+                  0000d5d1    00000001     --HOLE-- [fill = 0]
+                  0000d5d2    00000005     spi.obj (.cinit)
+                  0000d5d7    00000001     --HOLE-- [fill = 0]
+                  0000d5d8    00000005     trf7970.obj (.cinit)
+                  0000d5dd    00000001     --HOLE-- [fill = 0]
+                  0000d5de    00000002     (.pad.cinit) [fill = 0]
+
+PORT1      0    0000ffe4    00000002     
+                  0000ffe4    00000002     iso15693.obj (.int02)
+
+PORT2      0    0000ffe6    00000002     
+                  0000ffe6    00000002     trf7970.obj (.int03)
+
+ADC10      0    0000ffea    00000002     
+                  0000ffea    00000002     rts430.lib : int05.obj (.int05)
+
+USCIAB0TX 
+*          0    0000ffec    00000002     
+                  0000ffec    00000002     rts430.lib : int06.obj (.int06)
+
+USCIAB0RX 
+*          0    0000ffee    00000002     
+                  0000ffee    00000002     rts430.lib : int07.obj (.int07)
+
+TIMER0_A1 
+*          0    0000fff0    00000002     
+                  0000fff0    00000002     rts430.lib : int08.obj (.int08)
+
+TIMER0_A0 
+*          0    0000fff2    00000002     
+                  0000fff2    00000002     trf7970BoosterPack.obj (.int09)
+
+WDT        0    0000fff4    00000002     
+                  0000fff4    00000002     iso15693.obj (.int10)
+
+COMPARATORA 
+*          0    0000fff6    00000002     
+                  0000fff6    00000002     rts430.lib : int11.obj (.int11)
+
+TIMER1_A1 
+*          0    0000fff8    00000002     
+                  0000fff8    00000002     rts430.lib : int12.obj (.int12)
+
+TIMER1_A0 
+*          0    0000fffa    00000002     
+                  0000fffa    00000002     rts430.lib : int13.obj (.int13)
+
+NMI        0    0000fffc    00000002     
+                  0000fffc    00000002     rts430.lib : int14.obj (.int14)
+
+.reset     0    0000fffe    00000002     
+                  0000fffe    00000002     rts430.lib : boot.obj (.reset)
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+00000200   .bss
+00000200   .data
+0000c000   .text
+0000004a   ADC10AE0
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000053   BCSCTL3
+0000d2ca   C$$EXIT
+00000059   CACTL1
+0000005a   CACTL2
+000010fb   CALBC1_12MHZ
+000010f9   CALBC1_16MHZ
+000010ff   CALBC1_1MHZ
+000010fd   CALBC1_8MHZ
+000010fa   CALDCO_12MHZ
+000010f8   CALDCO_16MHZ
+000010fe   CALDCO_1MHZ
+000010fc   CALDCO_8MHZ
+0000005b   CAPD
+00000056   DCOCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000c962   Find_Tag
+00000000   IE1
+00000001   IE2
+00000002   IFG1
+00000003   IFG2
+0000d014   I_ASR
+0000d03c   I_ASR_1
+0000d02a   I_ASR_10
+0000d028   I_ASR_11
+0000d026   I_ASR_12
+0000d024   I_ASR_13
+0000d022   I_ASR_14
+0000d020   I_ASR_15
+0000d03a   I_ASR_2
+0000d038   I_ASR_3
+0000d036   I_ASR_4
+0000d034   I_ASR_5
+0000d032   I_ASR_6
+0000d030   I_ASR_7
+0000d02e   I_ASR_8
+0000d02c   I_ASR_9
+0000d040   I_LSL
+0000d068   I_LSL_1
+0000d056   I_LSL_10
+0000d054   I_LSL_11
+0000d052   I_LSL_12
+0000d050   I_LSL_13
+0000d04e   I_LSL_14
+0000d04c   I_LSL_15
+0000d066   I_LSL_2
+0000d064   I_LSL_3
+0000d062   I_LSL_4
+0000d060   I_LSL_5
+0000d05e   I_LSL_6
+0000d05c   I_LSL_7
+0000d05a   I_LSL_8
+0000d058   I_LSL_9
+0000c000   Iso15693Anticollision
+0000cf20   Iso15693FindTag
+0000cf1a   L_LSL_1
+0000cef6   L_LSL_10
+0000cef2   L_LSL_11
+0000ceee   L_LSL_12
+0000ceea   L_LSL_13
+0000cee6   L_LSL_14
+0000cee2   L_LSL_15
+0000cf16   L_LSL_2
+0000cf12   L_LSL_3
+0000cf0e   L_LSL_4
+0000cf0a   L_LSL_5
+0000cf06   L_LSL_6
+0000cf02   L_LSL_7
+0000cefe   L_LSL_8
+0000cefa   L_LSL_9
+0000cce8   L_LSR_1
+0000ccb2   L_LSR_10
+0000ccac   L_LSR_11
+0000cca6   L_LSR_12
+0000cca0   L_LSR_13
+0000cc9a   L_LSR_14
+0000cc94   L_LSR_15
+0000cce2   L_LSR_2
+0000ccdc   L_LSR_3
+0000ccd6   L_LSR_4
+0000ccd0   L_LSR_5
+0000ccca   L_LSR_6
+0000ccc4   L_LSR_7
+0000ccbe   L_LSR_8
+0000ccb8   L_LSR_9
+0000d27c   McuCounterSet
+0000ccf0   McuDelayMillisecond
+0000cae4   McuOscSel
+00000022   P1DIR
+00000025   P1IE
+00000024   P1IES
+00000023   P1IFG
+00000020   P1IN
+00000021   P1OUT
+00000027   P1REN
+00000026   P1SEL
+00000041   P1SEL2
+0000002a   P2DIR
+0000002d   P2IE
+0000002c   P2IES
+0000002b   P2IFG
+00000028   P2IN
+00000029   P2OUT
+0000002f   P2REN
+0000002e   P2SEL
+00000042   P2SEL2
+0000001a   P3DIR
+00000018   P3IN
+00000019   P3OUT
+00000010   P3REN
+0000001b   P3SEL
+00000043   P3SEL2
+0000d298   Port_1
+0000cea2   SpiDirectCommand
+0000cd44   SpiRawWrite
+0000ca68   SpiReadCont
+0000c8dc   SpiReadSingle
+0000d102   SpiSetup
+0000cf52   SpiUsciSet
+0000cc36   SpiWriteCont
+0000cb5c   SpiWriteSingle
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000160   TA0CTL
+0000012e   TA0IV
+00000170   TA0R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000180   TA1CTL
+0000011e   TA1IV
+00000190   TA1R
+000010db   TLV_ADC10_1_LEN
+000010da   TLV_ADC10_1_TAG
+000010c0   TLV_CHECKSUM
+000010f7   TLV_DCO_30_LEN
+000010f6   TLV_DCO_30_TAG
+0000c9e6   TRF7970A_Init
+0000028d   Tag_Count
+0000d2b4   Trf7970CommunicationSetup
+0000d28a   Trf7970DirectCommand
+0000d06c   Trf7970DisableSlotCounter
+0000c4a0   Trf7970ISR
+0000cfb6   Trf7970InitialSettings
+0000cbce   Trf7970PortB
+0000d1e4   Trf7970RawWrite
+0000d2ba   Trf7970ReConfig
+0000d194   Trf7970ReadCont
+0000d124   Trf7970ReadIrqStatus
+0000d1f6   Trf7970ReadSingle
+0000d22c   Trf7970Reset
+0000d162   Trf7970ResetIrqStatus
+0000d23c   Trf7970RunDecoders
+0000d24c   Trf7970StopDecoders
+0000d25c   Trf7970TransmitNextSlot
+0000d0de   Trf7970TurnRfOff
+0000d17c   Trf7970TurnRfOn
+0000d1a8   Trf7970WriteCont
+0000c6cc   Trf7970WriteIsoControl
+0000d1bc   Trf7970WriteSingle
+0000005d   UCA0ABCTL
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+0000005f   UCA0IRRCTL
+0000005e   UCA0IRTCTL
+00000064   UCA0MCTL
+00000066   UCA0RXBUF
+00000065   UCA0STAT
+00000067   UCA0TXBUF
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006c   UCB0I2CIE
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000006e   UCB0RXBUF
+0000006d   UCB0STAT
+0000006f   UCB0TXBUF
+00000294   UID_chooser
+0000029a   UID_holder
+000002a4   UID_holder2
+0000d092   UartNibble2Ascii
+0000ce60   UartPutByte
+0000d1d0   UartPutChar
+0000d208   UartPutCrlf
+0000d144   UartSendCString
+0000cfe6   UartSetup
+00000120   WDTCTL
+00000400   __STACK_END
+0000012c   __STACK_SIZE
+0000d2c0   __TI_ISR_TRAP
+00000001   __TI_args_main
+00000001   __TI_auto_init
+000002c4   __TI_cleanup_ptr
+000002c6   __TI_dtors_ptr
+00000001   __TI_exit
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff6   __TI_int11
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+ffffffff   __binit__
+00000200   __bss__
+ffffffff   __c_args__
+0000d56c   __cinit__
+00000200   __data__
+00000200   __edata__
+000002d1   __end__
+0000d2d0   __etext__
+0000c81a   __fs_mpy
+0000cdd4   __fs_tou
+0000cf84   __fs_ultof
+ffffffff   __pinit__
+0000c000   __text__
+0000cd8c   _auto_init
+0000d0b8   _c_int00
+0000d0b8   _c_int00_noexit
+000002c0   _lock
+0000d2ce   _nop
+0000fffe   _reset_vector
+000002d4   _stack
+0000d2c6   _system_pre_init
+000002c2   _unlock
+0000d2ca   abort
+000002c8   afi
+ffffffff   binit
+000002ca   blocknum
+00000200   buf
+0000d56c   cinit
+000002bc   coll_poss
+000002cc   command
+000002ae   complete_uid
+00000298   counter
+000002ce   direct_mode
+00000200   edata
+0000028c   enable
+000002d1   end
+0000d2d0   etext
+00000296   flag
+000002c9   flags
+0000d278   func_epilog_1
+0000d276   func_epilog_2
+0000d274   func_epilog_3
+0000d272   func_epilog_4
+0000d270   func_epilog_5
+0000d26e   func_epilog_6
+0000d26c   func_epilog_7
+00000292   host_control_flag
+0000028e   i_reg
+0000028f   irq_flag
+0000d2a2   main
+0000d21a   memcpy
+ffffffff   pinit
+000002cf   rx_data
+000002d0   rx_done
+00000290   rx_error_flag
+00000291   rxtx_state
+00000293   stand_alone_flag
+000002bf   temp
+0000ce1a   timerHandler
+000002bd   uid_pos
+000002be   uid_pos1
+0000d2ac   watchdog_timer
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000000   IE1
+00000001   IE2
+00000001   __TI_args_main
+00000001   __TI_auto_init
+00000001   __TI_exit
+00000002   IFG1
+00000003   IFG2
+00000010   P3REN
+00000018   P3IN
+00000019   P3OUT
+0000001a   P3DIR
+0000001b   P3SEL
+00000020   P1IN
+00000021   P1OUT
+00000022   P1DIR
+00000023   P1IFG
+00000024   P1IES
+00000025   P1IE
+00000026   P1SEL
+00000027   P1REN
+00000028   P2IN
+00000029   P2OUT
+0000002a   P2DIR
+0000002b   P2IFG
+0000002c   P2IES
+0000002d   P2IE
+0000002e   P2SEL
+0000002f   P2REN
+00000041   P1SEL2
+00000042   P2SEL2
+00000043   P3SEL2
+00000048   ADC10DTC0
+00000049   ADC10DTC1
+0000004a   ADC10AE0
+00000053   BCSCTL3
+00000056   DCOCTL
+00000057   BCSCTL1
+00000058   BCSCTL2
+00000059   CACTL1
+0000005a   CACTL2
+0000005b   CAPD
+0000005d   UCA0ABCTL
+0000005e   UCA0IRTCTL
+0000005f   UCA0IRRCTL
+00000060   UCA0CTL0
+00000061   UCA0CTL1
+00000062   UCA0BR0
+00000063   UCA0BR1
+00000064   UCA0MCTL
+00000065   UCA0STAT
+00000066   UCA0RXBUF
+00000067   UCA0TXBUF
+00000068   UCB0CTL0
+00000069   UCB0CTL1
+0000006a   UCB0BR0
+0000006b   UCB0BR1
+0000006c   UCB0I2CIE
+0000006d   UCB0STAT
+0000006e   UCB0RXBUF
+0000006f   UCB0TXBUF
+00000118   UCB0I2COA
+0000011a   UCB0I2CSA
+0000011e   TA1IV
+00000120   WDTCTL
+00000128   FCTL1
+0000012a   FCTL2
+0000012c   FCTL3
+0000012c   __STACK_SIZE
+0000012e   TA0IV
+00000160   TA0CTL
+00000162   TA0CCTL0
+00000164   TA0CCTL1
+00000166   TA0CCTL2
+00000170   TA0R
+00000172   TA0CCR0
+00000174   TA0CCR1
+00000176   TA0CCR2
+00000180   TA1CTL
+00000182   TA1CCTL0
+00000184   TA1CCTL1
+00000186   TA1CCTL2
+00000190   TA1R
+00000192   TA1CCR0
+00000194   TA1CCR1
+00000196   TA1CCR2
+000001b0   ADC10CTL0
+000001b2   ADC10CTL1
+000001b4   ADC10MEM
+000001bc   ADC10SA
+00000200   .bss
+00000200   .data
+00000200   __bss__
+00000200   __data__
+00000200   __edata__
+00000200   buf
+00000200   edata
+0000028c   enable
+0000028d   Tag_Count
+0000028e   i_reg
+0000028f   irq_flag
+00000290   rx_error_flag
+00000291   rxtx_state
+00000292   host_control_flag
+00000293   stand_alone_flag
+00000294   UID_chooser
+00000296   flag
+00000298   counter
+0000029a   UID_holder
+000002a4   UID_holder2
+000002ae   complete_uid
+000002bc   coll_poss
+000002bd   uid_pos
+000002be   uid_pos1
+000002bf   temp
+000002c0   _lock
+000002c2   _unlock
+000002c4   __TI_cleanup_ptr
+000002c6   __TI_dtors_ptr
+000002c8   afi
+000002c9   flags
+000002ca   blocknum
+000002cc   command
+000002ce   direct_mode
+000002cf   rx_data
+000002d0   rx_done
+000002d1   __end__
+000002d1   end
+000002d4   _stack
+00000400   __STACK_END
+000010c0   TLV_CHECKSUM
+000010da   TLV_ADC10_1_TAG
+000010db   TLV_ADC10_1_LEN
+000010f6   TLV_DCO_30_TAG
+000010f7   TLV_DCO_30_LEN
+000010f8   CALDCO_16MHZ
+000010f9   CALBC1_16MHZ
+000010fa   CALDCO_12MHZ
+000010fb   CALBC1_12MHZ
+000010fc   CALDCO_8MHZ
+000010fd   CALBC1_8MHZ
+000010fe   CALDCO_1MHZ
+000010ff   CALBC1_1MHZ
+0000c000   .text
+0000c000   Iso15693Anticollision
+0000c000   __text__
+0000c4a0   Trf7970ISR
+0000c6cc   Trf7970WriteIsoControl
+0000c81a   __fs_mpy
+0000c8dc   SpiReadSingle
+0000c962   Find_Tag
+0000c9e6   TRF7970A_Init
+0000ca68   SpiReadCont
+0000cae4   McuOscSel
+0000cb5c   SpiWriteSingle
+0000cbce   Trf7970PortB
+0000cc36   SpiWriteCont
+0000cc94   L_LSR_15
+0000cc9a   L_LSR_14
+0000cca0   L_LSR_13
+0000cca6   L_LSR_12
+0000ccac   L_LSR_11
+0000ccb2   L_LSR_10
+0000ccb8   L_LSR_9
+0000ccbe   L_LSR_8
+0000ccc4   L_LSR_7
+0000ccca   L_LSR_6
+0000ccd0   L_LSR_5
+0000ccd6   L_LSR_4
+0000ccdc   L_LSR_3
+0000cce2   L_LSR_2
+0000cce8   L_LSR_1
+0000ccf0   McuDelayMillisecond
+0000cd44   SpiRawWrite
+0000cd8c   _auto_init
+0000cdd4   __fs_tou
+0000ce1a   timerHandler
+0000ce60   UartPutByte
+0000cea2   SpiDirectCommand
+0000cee2   L_LSL_15
+0000cee6   L_LSL_14
+0000ceea   L_LSL_13
+0000ceee   L_LSL_12
+0000cef2   L_LSL_11
+0000cef6   L_LSL_10
+0000cefa   L_LSL_9
+0000cefe   L_LSL_8
+0000cf02   L_LSL_7
+0000cf06   L_LSL_6
+0000cf0a   L_LSL_5
+0000cf0e   L_LSL_4
+0000cf12   L_LSL_3
+0000cf16   L_LSL_2
+0000cf1a   L_LSL_1
+0000cf20   Iso15693FindTag
+0000cf52   SpiUsciSet
+0000cf84   __fs_ultof
+0000cfb6   Trf7970InitialSettings
+0000cfe6   UartSetup
+0000d014   I_ASR
+0000d020   I_ASR_15
+0000d022   I_ASR_14
+0000d024   I_ASR_13
+0000d026   I_ASR_12
+0000d028   I_ASR_11
+0000d02a   I_ASR_10
+0000d02c   I_ASR_9
+0000d02e   I_ASR_8
+0000d030   I_ASR_7
+0000d032   I_ASR_6
+0000d034   I_ASR_5
+0000d036   I_ASR_4
+0000d038   I_ASR_3
+0000d03a   I_ASR_2
+0000d03c   I_ASR_1
+0000d040   I_LSL
+0000d04c   I_LSL_15
+0000d04e   I_LSL_14
+0000d050   I_LSL_13
+0000d052   I_LSL_12
+0000d054   I_LSL_11
+0000d056   I_LSL_10
+0000d058   I_LSL_9
+0000d05a   I_LSL_8
+0000d05c   I_LSL_7
+0000d05e   I_LSL_6
+0000d060   I_LSL_5
+0000d062   I_LSL_4
+0000d064   I_LSL_3
+0000d066   I_LSL_2
+0000d068   I_LSL_1
+0000d06c   Trf7970DisableSlotCounter
+0000d092   UartNibble2Ascii
+0000d0b8   _c_int00
+0000d0b8   _c_int00_noexit
+0000d0de   Trf7970TurnRfOff
+0000d102   SpiSetup
+0000d124   Trf7970ReadIrqStatus
+0000d144   UartSendCString
+0000d162   Trf7970ResetIrqStatus
+0000d17c   Trf7970TurnRfOn
+0000d194   Trf7970ReadCont
+0000d1a8   Trf7970WriteCont
+0000d1bc   Trf7970WriteSingle
+0000d1d0   UartPutChar
+0000d1e4   Trf7970RawWrite
+0000d1f6   Trf7970ReadSingle
+0000d208   UartPutCrlf
+0000d21a   memcpy
+0000d22c   Trf7970Reset
+0000d23c   Trf7970RunDecoders
+0000d24c   Trf7970StopDecoders
+0000d25c   Trf7970TransmitNextSlot
+0000d26c   func_epilog_7
+0000d26e   func_epilog_6
+0000d270   func_epilog_5
+0000d272   func_epilog_4
+0000d274   func_epilog_3
+0000d276   func_epilog_2
+0000d278   func_epilog_1
+0000d27c   McuCounterSet
+0000d28a   Trf7970DirectCommand
+0000d298   Port_1
+0000d2a2   main
+0000d2ac   watchdog_timer
+0000d2b4   Trf7970CommunicationSetup
+0000d2ba   Trf7970ReConfig
+0000d2c0   __TI_ISR_TRAP
+0000d2c6   _system_pre_init
+0000d2ca   C$$EXIT
+0000d2ca   abort
+0000d2ce   _nop
+0000d2d0   __etext__
+0000d2d0   etext
+0000d56c   __cinit__
+0000d56c   cinit
+0000ffe4   __TI_int02
+0000ffe6   __TI_int03
+0000ffea   __TI_int05
+0000ffec   __TI_int06
+0000ffee   __TI_int07
+0000fff0   __TI_int08
+0000fff2   __TI_int09
+0000fff4   __TI_int10
+0000fff6   __TI_int11
+0000fff8   __TI_int12
+0000fffa   __TI_int13
+0000fffc   __TI_int14
+0000fffe   _reset_vector
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   __pinit__
+ffffffff   binit
+ffffffff   pinit
+
+[293 symbols]

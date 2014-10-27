@@ -1,0 +1,1 @@
+"./IMU_MPU6050/MSP430_MPU6050.obj" "./IMU_MPU6050/I2C_MSP430.obj" "./SD_Card/mmc.obj" "./SD_Card/ff.obj" "./SD_Card/SD_main.obj" "./SD_Card/HAL_SDCard.obj" "./uWave.obj" "./main.obj" "./LEDs.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 

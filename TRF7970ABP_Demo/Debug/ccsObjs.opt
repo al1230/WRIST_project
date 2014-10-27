@@ -1,0 +1,1 @@
+"./Hardware/uart.obj" "./Hardware/trf7970BoosterPack.obj" "./Hardware/trf7970.obj" "./Hardware/spi.obj" "./NFC/iso15693.obj" "./NFC/iso14443b.obj" "./NFC/iso14443a.obj" "./main.obj" "../lnk_msp430g2553.cmd" -l"libc.a" 
